@@ -1,10 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-
 //custom modules
-const routes = require('./routes/router.js')
+const routes = require('./routes/router.js');
 
+//paypal int
+paypal.configure({
+    'mode': 'sandbox', //sandbox or live
+    'client_id': 'AQu86yqhDDKUzWQTWXsplC_D7ge6Xac_HxawxSEmFO00PbEp_FfJDLRFXKNu-QF-ikroDf4lGOFXAh4_',
+    'client_secret': 'EBoQ5zF42Y0Q9jxA1Bgyiv3bh6HP830uXWcf8TDzZA3ltKn5IUx9XCU2YNkqOrusdRzvwXLI5QPnpxBt'
+  });
 
 //express app
 const app = express()
