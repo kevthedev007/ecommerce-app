@@ -1,5 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path')
+const paypal = require('paypal-rest-sdk');
+
 
 //custom modules
 const routes = require('./routes/router.js');
@@ -13,6 +16,10 @@ paypal.configure({
 
 //express app
 const app = express()
+
+//template engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 //middlewares
 app.use(express.static('public'))

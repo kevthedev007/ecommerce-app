@@ -83,14 +83,19 @@ let controller = {
                 throw error;
             } else {
                 let payment = JSON.stringify(payment);
-                let addToDatabase = await pool.query('INSERT INTO payment (id, email, first_name, last_name, payer_id) VALUES ($1, $2, $3, $4, $5)',[payment.id, payment.payer.payer_info.email, payment.payer.payer_info.first_name, payment.payer.payer_info.last_name, payment.payer.payer_info.payer_id]);
-                res.render('success');
+                let addToDatabase = pool.query('INSERT INTO payment (id, email, first_name, last_name, payer_id) VALUES ($1, $2, $3, $4, $5)',[payment.id, payment.payer.payer_info.email, payment.payer.payer_info.first_name, payment.payer.payer_info.last_name, payment.payer.payer_info.payer_id], (error, done) => {
+                    if(err) {next(err)};
+                let clearcart = pool.query('DELETE FROM cart', (err, result) => {
+                    if(err) next(err);
+                    res.render('success');
+                })
+                });
             }
         });
     },
 
     cancel: function(req, res) {
-        res.render('cancel')
+        res.render('failure')
     }
 } 
 
