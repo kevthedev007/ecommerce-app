@@ -1,6 +1,7 @@
 const pool = require('../models/queries.js');
 const paypal = require('paypal-rest-sdk');
 
+
 let controller = {
     home: async function(req, res) {
         let products = await pool.query('SELECT * FROM products ORDER BY id ASC');
@@ -45,7 +46,7 @@ let controller = {
                             sku: product.id,
                             price: product.price,
                             currency: "USD",
-                            quantity: products.rows.length
+                            quantity: 1
                         }
                     })
                 },
