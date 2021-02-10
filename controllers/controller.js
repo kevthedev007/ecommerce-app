@@ -35,8 +35,8 @@ let controller = {
                 "payment_method": "paypal"
             },
             "redirect_urls": {
-                "return_url": "http://localhost:3000/success",
-                "cancel_url": "http://localhost:3000/cancel"
+                "return_url": "https://ecommerce-kmt.herokuapp.com/success",
+                "cancel_url": "https://ecommerce-kmt.herokuapp.com//cancel"
             },
             "transactions": [{
                 "item_list": {
