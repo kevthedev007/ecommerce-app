@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path')
 const paypal = require('paypal-rest-sdk');
+const cors = require('cors')
 
 
 //custom modules
@@ -22,6 +23,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 //middlewares
+app.use(cors())
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
