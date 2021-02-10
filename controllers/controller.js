@@ -36,7 +36,7 @@ let controller = {
             },
             "redirect_urls": {
                 "return_url": "https://ecommerce-kmt.herokuapp.com/success",
-                "cancel_url": "https://ecommerce-kmt.herokuapp.com//cancel"
+                "cancel_url": "https://ecommerce-kmt.herokuapp.com/cancel"
             },
             "transactions": [{
                 "item_list": {
