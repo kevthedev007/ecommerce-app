@@ -29,4 +29,4 @@ app.use(bodyParser.json());
 //adding route
 app.use('/', routes)
 
-app.listen(3000, () => console.log('app started at port 3000'))
+app.listen(process.env.PORT || 3000, () => console.log(`app started at ${process.env.PORT}`))
