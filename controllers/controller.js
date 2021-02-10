@@ -57,14 +57,14 @@ let controller = {
                 "description": "Thanks for Purchasing"
             }]
         };
-
+        console.log(create_payment_json)
         paypal.payment.create(create_payment_json, function (error, payment) {
             if (error) {
                 throw error;
             } else {
                 for(let i = 0; i < payment.links.length; i++) {
                   if(payment.links[i].rel === 'approval_url') {
-                    res.redirect(payment.links[i].href)
+                    res.json(payment.links[i].href)
                   }
                 }
             }
