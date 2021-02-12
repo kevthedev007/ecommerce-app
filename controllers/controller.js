@@ -83,9 +83,9 @@ let controller = {
             if (error) {
                 throw error;
             } else {
-                let addToDatabase = pool.query('INSERT INTO payment ($1, $2)', [paymentId, payerId], (error, resp) => {
+                pool.query('INSERT INTO payment ($1, $2)', [paymentId, payerId], (error, resp) => {
                     if(err) {next(err)};
-                let clearcart = pool.query('DELETE FROM cart', (err, result) => {
+                pool.query('DELETE FROM cart', (err, result) => {
                     if(err) next(err);
                     res.render('success');
                 })
