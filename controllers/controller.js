@@ -83,7 +83,7 @@ let controller = {
             if (error) {
                 throw error;
             } else {
-                pool.query('INSERT INTO payment (payment_id, payer_id) VALUES ($1, $2, $3, $4, $5)', [payment.id, payment.payer.payer_info.payer_id, payment.payer.payer_info.first_name, payment.payer.payer_info.last_name, payment.payer.payer_info.email], (err, resp) => {
+                pool.query('INSERT INTO payment (payment_id, payer_id, first_name, last_name, email) VALUES ($1, $2, $3, $4, $5)', [payment.id, payment.payer.payer_info.payer_id, payment.payer.payer_info.first_name, payment.payer.payer_info.last_name, payment.payer.payer_info.email], (err, resp) => {
                     if(err) {
                         next(err)
                     } else {
