@@ -17,7 +17,7 @@ let controller = {
     getCart: async function(req, res) {
         let getItems = await pool.query('SELECT products.name, products.price, cart.cart_id FROM products JOIN cart ON products.id = cart.product_id');
         let total = await pool.query('SELECT SUM(products.price) FROM products JOIN cart ON products.id = cart.product_id')
-        res.json(getItems.rows, total)
+        res.json(total)
     },
 
     deleteFromCart: async function(req, res) {
