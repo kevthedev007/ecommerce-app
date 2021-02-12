@@ -83,7 +83,7 @@ let controller = {
             if (error) {
                 throw error;
             } else {
-                pool.query('INSERT INTO payment (payment_id, payer_id) VALUES ($1, $2)', [paymentId, payerId], (error, resp) => {
+                pool.query('INSERT INTO payment (payment_id, payer_id) VALUES ($1, $2)', [payment.id, payment.payer.payer_info.payer_id], (error, resp) => {
                     if(err) {next(err)};
                 pool.query('DELETE FROM cart', (err, result) => {
                     if(err) next(err);
