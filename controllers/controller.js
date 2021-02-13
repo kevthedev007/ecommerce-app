@@ -16,7 +16,10 @@ let controller = {
 
     getCart: async function(req, res) {
         let getItems = await pool.query('SELECT products.name, products.price, cart.cart_id FROM products JOIN cart ON products.id = cart.product_id');
-        res.json(getItems.rows)
+        let price = getItems.rows.map(item => parseFloat(item.price));
+        let total = price.reduce((acc, value) => acc + value)
+        res.json({Items: getItems.rows, total:total})
+        // res.json(getItems.rows)
     },
 
     deleteFromCart: async function(req, res) {
@@ -27,7 +30,9 @@ let controller = {
 
     postPaypal: async function(req, res) {
         let products = await pool.query('SELECT products.name, products.id, products.price FROM products JOIN cart ON products.id = cart.product_id');
-        let totalAmount = req.body.amount;
+        // let totalAmount = req.body.amount;
+        let price = products.rows.map(item => parseFloat(item.price));
+        let total = price.reduce((acc, value) => acc + value);
 
         const create_payment_json = {
             "intent": "sale",
@@ -52,12 +57,12 @@ let controller = {
                 },
                 "amount": {
                     "currency": "USD",
-                    "total": totalAmount
+                    "total": total.toString()
                 },
                 "description": "Thanks for Purchasing"
             }]
         };
-        console.log(create_payment_json)
+       
         paypal.payment.create(create_payment_json, function (error, payment) {
             if (error) {
                 throw error;
