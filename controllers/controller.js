@@ -16,7 +16,7 @@ let controller = {
 
     getCart: async function(req, res) {
         let getItems = await pool.query('SELECT products.name, products.price, cart.cart_id FROM products JOIN cart ON products.id = cart.product_id');
-        if(getItems.rows.length !== 0) {
+        if (getItems.rows.length !== 0) {
         let price = getItems.rows.map(item => parseFloat(item.price));
         let total = price.reduce((acc, value) => acc + value)
         res.json({Items: getItems.rows, total:total})
