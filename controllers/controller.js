@@ -22,7 +22,7 @@ let controller = {
         res.json({Items: getItems.rows, total:total})
         // res.json(getItems.rows)
         } else {
-            res.json({Items: getItems.rows})
+            res.json({Items: []})
         }
     },
 
