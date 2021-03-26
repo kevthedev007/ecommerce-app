@@ -1,0 +1,194 @@
+
+/* Start global stuff?? */
+h1.header {
+    font: normal bold 25px/1.25 var(--quicks);
+    text-transform: uppercase;
+    color: var(--primary-color1);
+    margin-top: 1rem;
+    margin-left: 5px;
+
+}
+/* End global stuff?? */
+
+
+
+
+/* Start Products Section */
+div.product-header {
+    position: fixed;
+    width: 75%;
+    background: white;
+    box-shadow: var(--box-shadow);
+    z-index: 3;
+    margin-left: -12px;
+}
+
+div.product-header hr {
+    margin-bottom: 0;
+
+}
+
+#clothes-box{
+    margin-top: 100px;
+}
+
+
+div.content{
+    width: 300px;
+    height: 400px;
+    margin-left: 1.6rem;
+}
+
+@media only screen and (max-width: 480px) {
+    div.content {
+         margin-left: 0.3rem; 
+     }
+} 
+
+
+div.item-card {
+    padding: 1rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10%;
+
+}
+
+
+div.item-card div.center img {
+    width: 200px;
+    height: 200px;
+    margin-left: 1.3rem;
+    filter: brightness(1.1) 
+    drop-shadow(1px 2px 3px #b1afaf);
+}
+
+button.add-item {
+    margin-left: 4.3rem;
+}
+
+/* End Products Section */
+
+
+
+
+/* Start Cart Section */
+div.sidenav {
+    border-left: 5px solid var(--border-color);
+    text-align: center;
+    /* margin: 0.47rem 0; */
+    background: #524358;
+    color: #22DD55;
+    overflow-y: scroll;
+    position: fixed;
+    margin-left: 75%;
+    height: 100%;
+    
+}
+
+h1#cart-title {
+    border-bottom: 2px solid #22DD55;
+    height: 48px;
+    margin-bottom: 1.9rem;
+    margin-top: 1.47rem;
+    color: #22DD55;
+    
+}
+
+@media only screen and (max-width: 1055px) {
+    h1#cart-title {
+        font: normal bold 16px/1.25 var(--quicks);
+
+     }
+}
+
+@media only screen and (max-width: 576px) {
+    h1#cart-title {
+        font: normal bold 11px/1.25 var(--quicks);
+
+     }
+}
+
+
+ul.list-of-items {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+}
+
+p#pTag {
+    font: normal normal 15px/1.25 var(--notoSans);
+}
+
+@media only screen and (max-width: 900px) {
+    p#pTag {
+        font: normal bold 12px/1.25 var(--notoSans);
+
+     }
+}
+
+@media only screen and (max-width: 576px) {
+    p#pTag {
+        font: normal bold 9px/1.25 var(--notoSans);
+
+     }
+}
+
+button.delete-button {
+    font: normal normal 12px/1.25 var(--notoSans);
+    margin-top: -10px;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 900px) {
+    button.delete-button {
+        font: normal bold 9px/1.25 var(--notoSans);
+
+     }
+}
+
+@media only screen and (max-width: 576px) {
+    button.delete-button {
+        font: normal bold 7px/1.25 var(--notoSans);
+
+     }
+}
+
+li hr {
+    margin-top: -10px;
+}
+/*End Cart Section */
+
+
+
+/*Start Checkout Section */
+div#checkout div {
+    margin-top: 5rem;
+    font: normal bold 18px/1.25 var(--notoSans);
+    border-top: 2px solid #22DD55;
+
+}
+
+p.h4c {
+    font: normal bold 12px/1.25 var(--notoSans);
+
+}
+
+button#donebtn {
+    font: normal bold .85rem/1.25 var(--notoSans);
+
+ }
+
+@media only screen and (max-width: 607px) {
+    button#donebtn {
+        font: normal bold 10px/1.25 var(--notoSans);
+
+     }
+}
+
+@media only screen and (max-width: 607px) {
+    button#target-btn {
+        font: normal bold 10px/1.25 var(--notoSans);
+
+     }
+}
+/*End Checkout Section */
